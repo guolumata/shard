@@ -21,7 +21,6 @@ public class UserController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
-    
 
     @GetMapping(value = "{id}")
     public UserPO show(@PathVariable String id) {

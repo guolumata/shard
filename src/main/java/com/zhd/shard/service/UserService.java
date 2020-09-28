@@ -20,6 +20,7 @@ public class UserService {
     private UserDAO userDAO;
 
     public UserPO getById(String id) {
-        return userDAO.getById(id);
+        UserPO po = userDAO.getById(id);
+        return po;
     }
 }

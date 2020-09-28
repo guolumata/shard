@@ -1,7 +1,5 @@
 package com.zhd.shard.dao;
 
-import org.apache.ibatis.annotations.Select;
-
 import com.zhd.shard.dto.UserPO;
 
 /**
@@ -10,6 +8,6 @@ import com.zhd.shard.dto.UserPO;
  */
 //@Mapper
 public interface UserDAO {
-    @Select("select * from t_user where id = #{id} limit 1")
+    //    @Select("select * from t_user where id = #{id} limit 1")
     UserPO getById(String id);
 }

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
@@ -73,7 +74,9 @@ public class DataSourceConfig {
 
     @Bean("dataSource")
     public DataSource shardingDataSource(ShardingRule shardingRule) throws SQLException {
-        return ShardingDataSourceFactory.createDataSource(shardingRule);
+        Properties props = new Properties();
+        props.put("sql.show", "true");
+        return ShardingDataSourceFactory.createDataSource(shardingRule, props);
     }
 
     @Bean
@@ -86,7 +89,8 @@ public class DataSourceConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(
-                new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/*Mapper.xml"));
+                new PathMatchingResourcePatternResolver()
+                        .getResources("classpath:mybatis/mapper/*Mapper.xml"));
         return bean.getObject();
     }
 

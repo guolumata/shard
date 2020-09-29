@@ -11,7 +11,7 @@
         ${alias}.version
     </sql>
 
-    <select id="findById" resultType="com.zhd.shard.dto.OrderPO">
+    <select id="getById" resultType="com.zhd.shard.dto.OrderPO">
         select
         <include refid="orderColumns">
             <property name="alias" value="t"/>

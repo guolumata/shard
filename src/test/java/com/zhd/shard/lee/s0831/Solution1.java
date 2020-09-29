@@ -3,7 +3,7 @@ package com.zhd.shard.lee.s0831;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.collect.Lists;
+import org.assertj.core.util.Lists;
 
 
 /**

@@ -3,7 +3,7 @@ package com.zhd.shard.lee.s0904;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kuaishou.qa.at.lee.s0821.TreeNode;
+import com.zhd.shard.lee.s0821.TreeNode;
 
 /**
  * @author zhanghongda <zhanghongda@kuaishou.com>

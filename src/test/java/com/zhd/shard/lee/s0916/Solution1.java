@@ -1,6 +1,6 @@
 package com.zhd.shard.lee.s0916;
 
-import com.kuaishou.qa.at.lee.s0821.TreeNode;
+import com.zhd.shard.lee.s0821.TreeNode;
 
 /**
  * @author zhanghongda <zhanghongda@kuaishou.com>

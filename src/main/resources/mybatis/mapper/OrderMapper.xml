@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhd.shard.dao.OrderDAO">
+
+    <sql id="orderColumns">
+        ${alias}.id,
+        ${alias}.user_id as userId,
+        ${alias}.state,
+        ${alias}.created_time as createdTime,
+        ${alias}.operated_time as operatedTime,
+        ${alias}.version
+    </sql>
+
+    <select id="findById" resultType="com.zhd.shard.dto.OrderPO">
+        select
+        <include refid="orderColumns">
+            <property name="alias" value="t"/>
+        </include>
+        from t_order t
+        <where>
+            t.id = #{arg0}
+        </where>
+        limit 1
+    </select>
+</mapper>
